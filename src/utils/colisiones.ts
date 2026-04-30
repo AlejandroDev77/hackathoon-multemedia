@@ -1,13 +1,7 @@
-// src/utils/collision.ts
-// ─────────────────────────────────────────────
-// Detección AABB usando getBoundingClientRect()
-// ─────────────────────────────────────────────
 
 import type { Position } from '../types/game.types';
 
-/**
- * Comprueba si dos elementos del DOM se solapan (AABB).
- */
+
 export function rectsCollide(
   refA: React.RefObject<HTMLElement | null>,
   refB: React.RefObject<HTMLElement | null>
@@ -25,9 +19,7 @@ export function rectsCollide(
   );
 }
 
-/**
- * Comprueba si el centro del jugador está dentro del radio del waypoint.
- */
+
 export function isNearWaypoint(
   playerRef: React.RefObject<HTMLElement | null>,
   waypoint: Position,
