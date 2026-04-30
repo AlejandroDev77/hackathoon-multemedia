@@ -1,4 +1,4 @@
-import { useRef, useEffect, memo, forwardRef } from 'react';
+import { memo, forwardRef } from 'react';
 import type { ObstacleData } from '../../types/game.types';
 
 interface ObstacleProps {
@@ -46,6 +46,8 @@ export const Obstacle = memo(
           boxShadow:    SHAPE_SHADOW[shape],
           pointerEvents:'none',
           willChange:   'left, top',
+          transform:    'translateZ(0)',
+          zIndex:       50,
         }}
       />
     );

@@ -7,7 +7,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useGameStore } from '../store/useGameStore';
-import { rectsCollide, isNearWaypoint } from '../utils/collision';
+import { rectsCollide, isNearWaypoint } from '../utils/colisiones';
 import { GAME_CONFIG, WAYPOINTS } from '../constants/gameConfig';
 
 interface UseCollisionDetectionParams {

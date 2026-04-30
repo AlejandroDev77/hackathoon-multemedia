@@ -2,7 +2,7 @@ import { useRef, useEffect, useCallback } from 'react';
 import { useGameStore } from '../../store/useGameStore';
 import { useGameLoop } from '../../hooks/useGameLoop';
 import { useCollisionDetection } from '../../hooks/useCollisionDetection';
-import { generateObstacles } from '../../utils/randomObstacles';
+import { generateObstacles } from '../../utils/obstacleUtils';
 import { GAME_CONFIG, WAYPOINTS } from '../../constants/gameConfig';
 import { PlayerObject } from './PlayerObject';
 import { Obstacle } from './Obstacle';
@@ -57,7 +57,7 @@ export function GameCanvas() {
           position:       'absolute',
           inset:          0,
           transformStyle: 'preserve-3d',
-          transform:      `rotateX(${GAME_CONFIG.ARENA_TILT_X}deg)`,
+          transform:      `rotateX(0deg)`,
           transformOrigin: 'center center',
         }}
       >

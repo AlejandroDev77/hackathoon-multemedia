@@ -1,3 +1,5 @@
+import { useGameStore } from '../../store/useGameStore';
+import { formatTime } from '../../utils/formatTime';
 
 export function GameOverScreen() {
   const gameState = useGameStore((s) => s.gameState);

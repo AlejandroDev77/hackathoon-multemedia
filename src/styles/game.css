@@ -1,0 +1,68 @@
+/* src/styles/game.css */
+/* ─────────────────────────────────────────────
+   Variables CSS, reset y animaciones globales
+   ───────────────────────────────────────────── */
+
+:root {
+  --color-bg:          #050a0f;
+  --color-arena:       #0d1b2a;
+  --color-accent-teal: #4ecdc4;
+  --color-accent-gold: #f9ca24;
+  --color-danger:      #ff7675;
+  --color-purple:      #a29bfe;
+
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width:      100%;
+  height:     100%;
+  overflow:   hidden;
+  background: var(--color-bg);
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-mono);
+  color: #ffffff;
+}
+
+/* ── Arena: grid perspectivo ────────────────── */
+.arena-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* ── Animación pulse de los waypoints ────────── */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.5); }
+  50%       { box-shadow: 0 0 36px rgba(78, 205, 196, 0.9); }
+}
+
+/* ── Parpadeo del indicador cooldown ────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Fade-in de pantallas ───────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen-enter {
+  animation: fadeIn 0.4s ease forwards;
+}

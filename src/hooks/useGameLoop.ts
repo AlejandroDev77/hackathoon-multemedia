@@ -13,8 +13,9 @@ export function useGameLoop(): void {
   const obstaclesRef = useRef<ObstacleData[]>([]);
   useEffect(() => {
     return useGameStore.subscribe(
-      (s) => s.obstacles,
-      (obs) => { obstaclesRef.current = obs; }
+      (state) => {
+        obstaclesRef.current = state.obstacles;
+      }
     );
   }, []);
 
