@@ -1,5 +1,3 @@
-// import { useGameStore } from '../../store/useGameStore';
-
 export function StartScreen() {
   const gameState = useGameStore((s) => s.gameState);
   const startGame = useGameStore((s) => s.startGame);
